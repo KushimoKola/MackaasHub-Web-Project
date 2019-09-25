@@ -1,0 +1,83 @@
+.profile-card{
+    height: 300px;
+    background: pink;
+}
+.profile-image-box{
+    height: 300px;
+}
+.profile-image-box img{
+    width: 100%;
+    height:100%;
+    border-radius: 50%;
+    position: absolute;
+    top:-50px;
+}
+.profile-name{
+    height: 60%;
+    color:aliceblue;
+}
+.jumbotron{
+    background: transparent;
+    color:darkblue;
+}
+.verified{
+    font-size: 30px;
+    text-align: center;
+    height: 50px;
+    
+}
+.verified i{
+    color: gold;
+    font-weight: 900;
+}
+.profile-stats{
+    background: white;
+    height: 0%;
+    display: flex;
+    position: relative;
+    top: 20%;
+
+}
+.profile-stats div{
+    border-left: 2px solid black;
+    display:flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 20px;
+}
+@media(max-width:650px){
+    
+    .verified{
+        background: none;
+    }
+    
+    .mackers-hide-mobile{
+        display:none;
+    }
+.profile-card{
+    height:auto;
+    margin: 0;
+    padding:
+    
+}
+.profile-image-box{
+    height:200px;
+    width: 200px;
+    
+   
+}
+.profile-image-box img{
+    width: auto;
+    height:;
+    position: relative;
+    
+}
+.profile-name{
+    height: 60%;
+    color:aliceblue;
+}
+.jumbotron{
+    background: transparent;
+    color:darkblue;
+}
+}
