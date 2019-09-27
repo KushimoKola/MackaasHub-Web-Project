@@ -1,619 +1,639 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <?php include 'resources.php';?>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Work+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="fonts/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 <body>
-  
-  <div class="site-wrap">
-        
-    <?php include 'nav.php';?>
-<!--
+
+    <div class="site-wrap">
+
+        <nav class="mackers-deepblue w3-border-bottom w3-xlarge">
+            <a href="index.php" class=" markers-text-high w3-bar-item  w3-text-white ">
+                <img src="images/logo.png" alt="Mackers-Logo" width="50">
+                <b>Markaas</b></a>
+            <span><a href="" data-toggle="modal" data-target="#mylogin"><span class="bg-light py-3 px-4 rounded" style="color:darkblue"><span class="icon-plus mr-3"></span>Register Your Business</span></a></span>
+            <div class="nav-right">
+                <a href="" data-toggle="modal" data-target="#mysignup">
+                    <span class="fas fa-user"></span>
+                    Register
+                </a>
+                |
+                <a href="" data-toggle="modal" data-target="#mylogin">
+                    <span class="fas fa-sign-in-alt"></span>
+                    Login
+                </a></div>
+        </nav>
+
+        <!-------------------------------------------------------------------------->
+        <!--    Registeration and Login Form Starts-->
+        <!-------------------------------------------------------------------------->
+        <!--Login Modal Box starts here, carefully crafted by Agbeniga Agboola-->
+        <!-------------------------------------------------------------------------->
+        <!-- The Modal -->
+        <div class="modal fade login" id="mylogin">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header ">
+                        <img class="mx-auto" src="images/logo_blue.png" alt="Mackers-Logo" width="70">
+
+                        <!--          <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="box">
+                            <div class="content">
+
+
+                                <div class="form">
+                                    <form action="api/user/login.php" method="GET" accept-charset="UTF-8">
+                                        <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                                        <input id="password" class="form-control" type="password" placeholder="Password" name="user_password">
+                                        <input class="btn btn-default btn-login" type="submit" value="Login">
+                                    </form>
+                                </div>
+                                <div class="modal-footer mx-auto"></div>
+                                <button class=" loginBtn loginBtn--facebook">
+                                    Login with Facebook
+                                </button>
+
+                                <button class="mx-auto loginBtn loginBtn--google">
+                                    Login with Google
+                                </button>
+                                <div class="forgot login-footer">
+                                    <span>Not yet a User?
+                                        <a href="" data-toggle="modal" data-target="#mysignup" data-dismiss="modal" aria-hidden="true">create an account</a>
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-------------------------------------------------------------------------->
+        <!--Login Modal Box ends here, carefully crafted by Agbeniga Agboola-->
+        <!-------------------------------------------------------------------------->
+        <!--Registeration Modal Box starts here, carefully crafted by Agbeniga Agboola-->
+        <!-------------------------------------------------------------------------->
+        <!-- The Modal -->
+        <div class="modal fade login registerBox" id="mysignup">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header ">
+                        <img class="mx-auto" src="images/logo_blue.png" alt="Mackers-Logo" width="70">
+
+                        <!--          <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="box">
+                            <div class="content">
+
+
+                                <div class="form">
+
+                                    <form action="api/user/signup.php" method="POST" accept-charset="UTF-8">
+                                        <input id="email" class="form-control" type="text" placeholder="Email" name="email" required>
+
+                                        <input id="password" class="form-control" type="password" placeholder="Password" name="user_password" required>
+
+
+
+                                        <input id="firstname" class="form-control" type="text" placeholder="Firstname" name="firstname" required>
+
+                                        <input id="lastname" class="form-control" type="text" placeholder="Last Name(Optional)" name="lastname">
+
+                                        <input id="phonenumber" class="form-control" type="number" placeholder="Phone Number (08033112233)" name="phonenumber" required>
+
+                                        <input class="btn btn-success btn-register" type="submit" value="Create account" name="register">
+                                    </form>
+                                </div>
+                                <div class="modal-footer mx-auto"></div>
+                                <button class=" loginBtn loginBtn--facebook">
+                                    Login with Facebook
+                                </button>
+
+                                <button class="mx-auto loginBtn loginBtn--google">
+                                    Login with Google
+                                </button>
+                                <div class="forgot login-footer">
+                                    <span>Already registered?
+                                        <a href="" data-toggle="modal" data-target="#mylogin" data-dismiss="modal" aria-hidden="true">Sign in</a>
+                                        ?</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-------------------------------------------------------------------------->
+        <!--Registeration Modal Box ends here, carefully crafted by Agbeniga Agboola-->
+        <!-------------------------------------------------------------------------->
+        <!--    Registeration and Login Form Ends-->
+        <!-------------------------------------------------------------------------->
+
+        <!--
     <div class="site-navbar-wrap js-site-navbar bg-white">
       
       
     </div>
 -->
-  
-<!--    <div style="height: 113px;"></div>-->
 
-    <div class="site-blocks-cover overlay" style="background-image: url('images/banner.jpg');" data-aos="fade" data-stellar-background-ratio="0.5">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-12" data-aos="fade">
-<!--            <h1>Find Job</h1>-->
-            <form action="#">
-              <div class="row mb-3">
-                <div class="col-md-9">
-                  <div class="row">
-                    <div class="col-md-6 mb-3 mb-md-0">
-                      <input type="text" class="mr-3 form-control border-0 px-4" placeholder="job title, keywords or company name ">
-                    </div>
-                    <div class="col-md-6 mb-3 mb-md-0">
-                      <div class="input-wrap">
-                        <span class="icon icon-room"></span>
-                      <input type="text" class="form-control form-control-block   border-0 px-4" id="autocomplete" placeholder="city, province or region" onFocus="geolocate()">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <input type="submit" class="btn btn-search btn-primary btn-block" value="Search">
-                </div>
-              </div>
-<!--
-              <div class="row">
-                <div class="col-md-12">
-                  <p class="small">or browse by category: <a href="#" class="category">Category #1</a> <a href="#" class="category">Category #2</a></p>
-                </div>
-              </div>
--->
-              
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    
+        <!--    <div style="height: 113px;"></div>-->
 
-    <div class="site-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-            <h2 class="mb-5">Popular Categories</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="100">
-            <a href="#" class="h-100 feature-item">
-              <span class="d-block icon flaticon-calculator mb-3 text-primary"></span>
-              <h2>Fashion</h2>
-<!--              <span class="counting">10,391</span>-->
-            </a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="200">
-            <a href="#" class="h-100 feature-item">
-              <span class="d-block icon flaticon-wrench mb-3 text-primary"></span>
-              <h2>Automobile Services</h2>
-<!--              <span class="counting">192</span>-->
-            </a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="300">
-            <a href="#" class="h-100 feature-item">
-              <span class="d-block icon flaticon-worker mb-3 text-primary"></span>
-              <h2>Construction</h2>
-<!--              <span class="counting">1,021</span>-->
-            </a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="400">
-            <a href="#" class="h-100 feature-item">
-              <span class="d-block icon flaticon-telecommunications mb-3 text-primary"></span>
-              <h2>Digital Services</h2>
-<!--              <span class="counting">1,219</span>-->
-            </a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="500">
-            <a href="#" class="h-100 feature-item">
-              <span class="d-block icon flaticon-stethoscope mb-3 text-primary"></span>
-              <h2>Healthcare</h2>
-<!--              <span class="counting">482</span>-->
-            </a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="600">
-            <a href="#" class="h-100 feature-item">
-              <span class="d-block icon flaticon-computer-graphic mb-3 text-primary"></span>
-              <h2>Design, Art &amp; Multimedia</h2>
-<!--              <span class="counting">5,409</span>-->
-            </a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="700">
-            <a href="#" class="h-100 feature-item">
-              <span class="d-block icon flaticon-trolley mb-3 text-primary"></span>
-              <h2>Transportation &amp; Logistics</h2>
-<!--              <span class="counting">291</span>-->
-            </a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="800">
-            <a href="#" class="h-100 feature-item">
-              <span class="d-block icon flaticon-restaurant mb-3 text-primary"></span>
-              <h2>Restaurant / Food Service</h2>
-<!--              <span class="counting">329</span>-->
-            </a>
-          </div>
-        </div>
+        <div class="site-blocks-cover overlay" style="background-image: url('images/banner.jpg');" data-aos="fade" data-stellar-background-ratio="0.5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12" data-aos="fade">
+                        <!--            <h1>Find Job</h1>-->
+                        <form action="#">
+                            <div class="row mb-3">
+                                <div class="col-md-9">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3 mb-md-0">
+                                            <input type="text" class="mr-3 form-control border-0 px-6" placeholder="Who do you want to be connected with?">
+                                        </div>
+                                        <div class="col-md-6 mb-3 mb-md-0">
+                                            <div class="input-wrap">
+                                                <span class="icon icon-room"></span>
+                                                <input type="text" class="form-control form-control-block   border-0 px-4" id="autocomplete" placeholder="city, province or region" onFocus="geolocate()">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="submit" class="btn btn-search btn-primary btn-block" value="Search">
+                                </div>
+                            </div>
 
-      </div>
-    </div>
-
-
-    <div class="site-section bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="100">
-            <h2 class="mb-5 h3">Business Near You</h2>
-            <div class="rounded border jobs-wrap">
-
-              <a href="job-single.php" class="job-item d-block d-md-flex align-items-center  border-bottom fulltime">
-                <div class="company-logo blank-logo text-center text-md-left pl-3">
-                  <img src="images/company_logo_blank.png" alt="Image" class="img-fluid mx-auto">
-                </div>
-                <div class="job-details h-100">
-                  <div class="p-3 align-self-center">
-                    <h3>Stellaobby Signature</h3>
-                    <div class="d-block d-lg-flex">
-                      <div class="mr-3"><span class="icon-suitcase mr-1"></span> Fashion</div>
-                      <div class="mr-3"><span class="icon-room mr-1"></span> Yaba</div>
-                      <div><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="job-category align-self-center">
-                  <div class="p-3">
-                    <span class="text-info p-2 rounded border border-info">Contact</span>
-                  </div>
-                </div>  
-              </a>
-
-              <a href="job-single.php" class="job-item d-block d-md-flex align-items-center freelance">
-                <div class="company-logo blank-logo text-center text-md-left pl-3">
-                  <img src="images/logo_1.png" alt="Image" class="img-fluid mx-auto">
-                </div>
-                <div class="job-details h-100">
-                  <div class="p-3 align-self-center">
-                    <h3>The Beauty Store</h3>
-                    <div class="d-block d-lg-flex">
-                      <div class="mr-3"><span class="icon-suitcase mr-1"></span> Beauty</div>
-                      <div class="mr-3"><span class="icon-room mr-1"></span>Surulere</div>
-                      <div><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="job-category align-self-center">
-                  <div class="p-3">
-                    <span class="text-warning p-2 rounded border border-warning">Contact</span>
-                  </div>
-                </div>  
-              </a>
-
-
-              <a href="job-single.php" class="job-item d-block d-md-flex align-items-center freelance">
-                <div class="company-logo blank-logo text-center text-md-left pl-3">
-                  <img src="images/logo_1.png" alt="Image" class="img-fluid mx-auto">
-                </div>
-                <div class="job-details h-100">
-                  <div class="p-3 align-self-center">
-                    <h3>Wrench Workshop</h3>
-                    <div class="d-block d-lg-flex">
-                      <div class="mr-3"><span class="icon-suitcase mr-1"></span>Auto Mechanics</div>
-                      <div class="mr-3"><span class="icon-room mr-1"></span>Costain</div>
-                      <div><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="job-category align-self-center">
-                  <div class="p-3">
-                    <span class="text-warning p-2 rounded border border-warning">Contact</span>
-                  </div>
-                </div>  
-              </a>
-
-
-              <a href="job-single.php" class="job-item d-block d-md-flex align-items-center fulltime">
-                <div class="company-logo blank-logo text-center text-md-left pl-3">
-                  <img src="images/company_logo_blank.png" alt="Image" class="img-fluid mx-auto">
-                </div>
-                <div class="job-details h-100">
-                  <div class="p-3 align-self-center">
-                    <h3>Awele Academy</h3>
-                    <div class="d-block d-lg-flex">
-                      <div class="mr-3"><span class="icon-suitcase mr-1"></span> Education</div>
-                      <div class="mr-3"><span class="icon-room mr-1"></span>Oyigbo</div>
-                      <div><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="job-category align-self-center">
-                  <div class="p-3">
-                    <span class="text-info p-2 rounded border border-info">Contact</span>
-                  </div>
-                </div>  
-              </a>
-
-              <a href="job-single.php" class="job-item d-block d-md-flex align-items-center partime">
-                <div class="company-logo blank-logo text-center text-md-left pl-3">
-                  <img src="images/logo_2.png" alt="Image" class="img-fluid mx-auto">
-                </div>
-                <div class="job-details h-100">
-                  <div class="p-3 align-self-center">
-                    <h3>Huddle Construction</h3>
-                    <div class="d-block d-lg-flex">
-                      <div class="mr-3"><span class="icon-suitcase mr-1"></span>Building</div>
-                      <div class="mr-3"><span class="icon-room mr-1"></span>Sabo</div>
-                      <div><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="job-category align-self-center">
-                  <div class="p-3">
-                    <span class="text-danger p-2 rounded border border-danger">Contact</span>
-                  </div>
-                </div>  
-              </a>
-
-
-            </div>
-
-            <div class="col-md-12 text-center mt-5">
-              <a href="#" class="btn btn-primary rounded py-3 px-5"><span class="icon-plus-circle"></span> Show More Businesses</a>
-            </div>
-          </div>
-          <div class="col-md-4 block-16" data-aos="fade-up" data-aos-delay="200">
-            <div class="d-flex mb-0">
-              <h2 class="mb-5 h3 mb-0">Featured Businesses</h2>
-              <div class="ml-auto mt-1"><a href="#" class="owl-custom-prev">Prev</a> / <a href="#" class="owl-custom-next">Next</a></div>
-            </div>
-
-            <div class="nonloop-block-16 owl-carousel">
-
-              <div class="border rounded p-4 bg-white">
-                <h2 class="h5">Monye Key Replacemen</h2>
-                <p><span class="border border-warning rounded p-1 px-2 text-warning">Contact</span></p>
-                <p>
-                  <span class="d-block"><span class="icon-suitcase"></span>Automobile Services</span>
-                  <span class="d-block"><span class="icon-room"></span> Lagos Island, Lagos State, Nigeria</span>
-                  <span class="d-block"><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></span>
-                </p>
-                <p class="mb-0">Our extensive experience replacing keys for a wide range of car makes and models, as well as our top-of-the-class tools and equipment, ensure we’re able to cut your new key in no time. You’ll be back behind the wheel before you know it</p>
-              </div>
-
-              <div class="border rounded p-4 bg-white">
-                <h2 class="h5">Fez Janitorial Services</h2>
-                <p><span class="border border-warning rounded p-1 px-2 text-warning">Contact</span></p>
-                <p>
-                  <span class="d-block"><span class="icon-suitcase"></span> Cleaning</span>
-                  <span class="d-block"><span class="icon-room"></span> Shomolu, Lagos Nigeria</span>
-                  <span class="d-block"><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></span>
-                </p>
-                <p class="mb-0">FEZ Janitorial Services, a subsidiary of FEZ integrated services Ltd focuses on delivering professional cleaning services. With our dedication to value creation,we employ modern techniques using our sophisticated equipment.</p>
-              </div>
-
-              <div class="border rounded p-4 bg-white">
-                <h2 class="h5">Arrowhead Automobiles</h2>
-                <p><span class="border border-warning rounded p-1 px-2 text-warning">Contact</span></p>
-                <p>
-                  <span class="d-block"><span class="icon-suitcase"></span> Auto Mechanic</span>
-                  <span class="d-block"><span class="icon-room"></span>Victoria Island, Lagos Nigeria</span>
-                  <span class="d-block"><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></span>
-                </p>
-                <p class="mb-0">Arrowhead Automobiles have over the years carved a niche in the high-end segment of the automobile market. We import and stock latest models of luxury brands like Mercedes Benz, Range Rover, Jaguar, Bentley, Honda, Toyota, Nissan and Mitsubishi.</p>
-              </div>
-
-              <div class="border rounded p-4 bg-white">
-                <h2 class="h5">Oreola Silk</h2>
-                <p><span class="border border-warning rounded p-1 px-2 text-warning">Contact</span></p>
-                <p>
-                  <span class="d-block"><span class="icon-suitcase"></span>Oreola</span>
-                  <span class="d-block"><span class="icon-room"></span> Lekki Phase 1, Lagos, Nigeria.</span>
-                  <span class="d-block"><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></span>
-                </p>
-                <p class="mb-0">Oreola Silk is a world-class beauty center in Lekki offering coloring and treatment services for weaves and wigs, hair-care, pedicure and other numerous beauty care services.</p>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-<!--
-    <div class="site-section" data-aos="fade">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6 mb-5 mb-md-0">
-            
-              <div class="img-border">
-                <a href="https://vimeo.com/28959265" class="popup-vimeo image-play">
-                  <span class="icon-wrap">
-                    <span class="icon icon-play"></span>
-                  </span>
-                  <img src="images/hero_2.jpg" alt="Image" class="img-fluid rounded">
-                </a>
-              </div>
-            
-          </div>
-          <div class="col-md-5 ml-auto">
-            <div class="text-left mb-5 section-heading">
-              <h2>Testimonies</h2>
-            </div>
-
-            <p class="mb-4 h5 font-italic lineheight1-5">&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nisi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nobis magni eaque velit eum, id rem eveniet dolor possimus voluptas..&rdquo;</p>
-            <p>&mdash; <strong class="text-black font-weight-bold">John Holmes</strong>, Marketing Strategist</p>
-            <p><a href="https://vimeo.com/28959265" class="popup-vimeo text-uppercase">Watch Video <span class="icon-arrow-right small"></span></a></p>
-          </div>
-        </div>
-      </div>
-    </div>
+                            <!--
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="small">or browse by category: <a href="#" class="category">Category #1</a> <a href="#" class="category">Category #2</a></p>
+                                </div>
+                            </div>
 -->
 
-<!--
 
-    <div class="site-blocks-cover overlay inner-page" style="background-image: url('images/hero_1.jpg');" data-aos="fade" data-stellar-background-ratio="0.5">
-      <div class="container">
-        <div class="row align-items-center justify-content-center">
-          <div class="col-md-6 text-center" data-aos="fade">
-            <h1 class="h3 mb-0">Your Dream Job</h1>
-            <p class="h3 text-white mb-5">Is Waiting For You</p>
-            <p><a href="#" class="btn btn-outline-warning py-3 px-4">Find Jobs</a> <a href="#" class="btn btn-warning py-3 px-4">Apply For A Job</a></p>
-            
-          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
+
+
+        <div class="site-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mx-auto text-center mb-5 section-heading">
+                        <h2 class="mb-5">Popular Categories</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="100">
+                        <a href="#" class="h-100 feature-item">
+                            <span class="d-block icon flaticon-calculator mb-3 text-primary"></span>
+                            <h2>Fashion</h2>
+                            <!--              <span class="counting">10,391</span>-->
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="200">
+                        <a href="#" class="h-100 feature-item">
+                            <span class="d-block icon flaticon-wrench mb-3 text-primary"></span>
+                            <h2>Automobile Services</h2>
+                            <!--              <span class="counting">192</span>-->
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#" class="h-100 feature-item">
+                            <span class="d-block icon flaticon-worker mb-3 text-primary"></span>
+                            <h2>Construction</h2>
+                            <!--              <span class="counting">1,021</span>-->
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="400">
+                        <a href="#" class="h-100 feature-item">
+                            <span class="d-block icon flaticon-telecommunications mb-3 text-primary"></span>
+                            <h2>Digital Services</h2>
+                            <!--              <span class="counting">1,219</span>-->
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="500">
+                        <a href="#" class="h-100 feature-item">
+                            <span class="d-block icon flaticon-stethoscope mb-3 text-primary"></span>
+                            <h2>Healthcare</h2>
+                            <!--              <span class="counting">482</span>-->
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="600">
+                        <a href="#" class="h-100 feature-item">
+                            <span class="d-block icon flaticon-computer-graphic mb-3 text-primary"></span>
+                            <h2>Design, Art &amp; Multimedia</h2>
+                            <!--              <span class="counting">5,409</span>-->
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="700">
+                        <a href="#" class="h-100 feature-item">
+                            <span class="d-block icon flaticon-trolley mb-3 text-primary"></span>
+                            <h2>Transportation &amp; Logistics</h2>
+                            <!--              <span class="counting">291</span>-->
+                        </a>
+                    </div>
+                    <div class="col-sm-6 col-md-4 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="800">
+                        <a href="#" class="h-100 feature-item">
+                            <span class="d-block icon flaticon-restaurant mb-3 text-primary"></span>
+                            <h2>Restaurant / Food Service</h2>
+                            <!--              <span class="counting">329</span>-->
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="site-section bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+                        <h2 class="mb-5 h3">Business Near You</h2>
+                        <div class="rounded border jobs-wrap">
+
+                            <a href="job-single.php" class="job-item d-block d-md-flex align-items-center  border-bottom fulltime">
+                                <div class="company-logo blank-logo text-center text-md-left pl-3">
+                                    <img src="images/company_logo_blank.png" alt="Image" class="img-fluid mx-auto">
+                                </div>
+                                <div class="job-details h-100">
+                                    <div class="p-3 align-self-center">
+                                        <h3>Stellaobby Signature</h3>
+                                        <div class="d-block d-lg-flex">
+                                            <div class="mr-3"><span class="icon-suitcase mr-1"></span> Fashion</div>
+                                            <div class="mr-3"><span class="icon-room mr-1"></span> Yaba</div>
+                                            <div><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="job-category align-self-center">
+                                    <div class="p-3">
+                                        <span class="text-info p-2 rounded border border-info">Contact</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="job-single.php" class="job-item d-block d-md-flex align-items-center freelance">
+                                <div class="company-logo blank-logo text-center text-md-left pl-3">
+                                    <img src="images/logo_1.png" alt="Image" class="img-fluid mx-auto">
+                                </div>
+                                <div class="job-details h-100">
+                                    <div class="p-3 align-self-center">
+                                        <h3>The Beauty Store</h3>
+                                        <div class="d-block d-lg-flex">
+                                            <div class="mr-3"><span class="icon-suitcase mr-1"></span> Beauty</div>
+                                            <div class="mr-3"><span class="icon-room mr-1"></span>Surulere</div>
+                                            <div><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="job-category align-self-center">
+                                    <div class="p-3">
+                                        <span class="text-warning p-2 rounded border border-warning">Contact</span>
+                                    </div>
+                                </div>
+                            </a>
+
+
+                            <a href="job-single.php" class="job-item d-block d-md-flex align-items-center freelance">
+                                <div class="company-logo blank-logo text-center text-md-left pl-3">
+                                    <img src="images/logo_1.png" alt="Image" class="img-fluid mx-auto">
+                                </div>
+                                <div class="job-details h-100">
+                                    <div class="p-3 align-self-center">
+                                        <h3>Wrench Workshop</h3>
+                                        <div class="d-block d-lg-flex">
+                                            <div class="mr-3"><span class="icon-suitcase mr-1"></span>Auto Mechanics</div>
+                                            <div class="mr-3"><span class="icon-room mr-1"></span>Costain</div>
+                                            <div><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="job-category align-self-center">
+                                    <div class="p-3">
+                                        <span class="text-warning p-2 rounded border border-warning">Contact</span>
+                                    </div>
+                                </div>
+                            </a>
+
+
+                            <a href="job-single.php" class="job-item d-block d-md-flex align-items-center fulltime">
+                                <div class="company-logo blank-logo text-center text-md-left pl-3">
+                                    <img src="images/company_logo_blank.png" alt="Image" class="img-fluid mx-auto">
+                                </div>
+                                <div class="job-details h-100">
+                                    <div class="p-3 align-self-center">
+                                        <div class="d-block d-lg-flex">
+                                            <div class="mr-3"><span class="icon-suitcase mr-1"></span> Plumber</div>
+                                            <div class="mr-3"><span class="icon-room mr-1"></span>Oyigbo</div>
+                                            <div><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="job-category align-self-center">
+                                    <div class="p-3">
+                                        <span class="text-info p-2 rounded border border-info">Contact</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="job-single.php" class="job-item d-block d-md-flex align-items-center partime">
+                                <div class="company-logo blank-logo text-center text-md-left pl-3">
+                                    <img src="images/logo_2.png" alt="Image" class="img-fluid mx-auto">
+                                </div>
+                                <div class="job-details h-100">
+                                    <div class="p-3 align-self-center">
+                                        <h3>Huddle Construction</h3>
+                                        <div class="d-block d-lg-flex">
+                                            <div class="mr-3"><span class="icon-suitcase mr-1"></span>Building</div>
+                                            <div class="mr-3"><span class="icon-room mr-1"></span>Sabo</div>
+                                            <div><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="job-category align-self-center">
+                                    <div class="p-3">
+                                        <span class="text-danger p-2 rounded border border-danger">Contact</span>
+                                    </div>
+                                </div>
+                            </a>
+
+
+                        </div>
+
+                        <div class="col-md-12 text-center mt-5">
+                            <a href="#" class="btn btn-primary rounded py-3 px-5"><span class="icon-plus-circle"></span> Show More Businesses</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 block-16" data-aos="fade-up" data-aos-delay="200">
+                        <div class="d-flex mb-0">
+                            <h2 class="mb-5 h3 mb-0">Featured Businesses</h2>
+                            <div class="ml-auto mt-1"><a href="#" class="owl-custom-prev">Prev</a> / <a href="#" class="owl-custom-next">Next</a></div>
+                        </div>
+
+                        <div class="nonloop-block-16 owl-carousel">
+
+                            <div class="border rounded p-4 bg-white">
+                                <h2 class="h5">Monye Key Replacemen</h2>
+                                <p><span class="border border-warning rounded p-1 px-2 text-warning">Contact</span></p>
+                                <p>
+                                    <span class="d-block"><span class="icon-suitcase"></span>Automobile Services</span>
+                                    <span class="d-block"><span class="icon-room"></span> Lagos Island, Lagos State, Nigeria</span>
+                                    <span class="d-block"><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></span>
+                                </p>
+                                <p class="mb-0">Our extensive experience replacing keys for a wide range of car makes and models, as well as our top-of-the-class tools and equipment, ensure we’re able to cut your new key in no time. You’ll be back behind the wheel before you know it</p>
+                            </div>
+
+                            <div class="border rounded p-4 bg-white">
+                                <h2 class="h5">Fez Janitorial Services</h2>
+                                <p><span class="border border-warning rounded p-1 px-2 text-warning">Contact</span></p>
+                                <p>
+                                    <span class="d-block"><span class="icon-suitcase"></span> Cleaning</span>
+                                    <span class="d-block"><span class="icon-room"></span> Shomolu, Lagos Nigeria</span>
+                                    <span class="d-block"><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></span>
+                                </p>
+                                <p class="mb-0">FEZ Janitorial Services, a subsidiary of FEZ integrated services Ltd focuses on delivering professional cleaning services. With our dedication to value creation,we employ modern techniques using our sophisticated equipment.</p>
+                            </div>
+
+                            <div class="border rounded p-4 bg-white">
+                                <h2 class="h5">Arrowhead Automobiles</h2>
+                                <p><span class="border border-warning rounded p-1 px-2 text-warning">Contact</span></p>
+                                <p>
+                                    <span class="d-block"><span class="icon-suitcase"></span> Auto Mechanic</span>
+                                    <span class="d-block"><span class="icon-room"></span>Victoria Island, Lagos Nigeria</span>
+                                    <span class="d-block"><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></span>
+                                </p>
+                                <p class="mb-0">Arrowhead Automobiles have over the years carved a niche in the high-end segment of the automobile market. We import and stock latest models of luxury brands like Mercedes Benz, Range Rover, Jaguar, Bentley, Honda, Toyota, Nissan and Mitsubishi.</p>
+                            </div>
+
+                            <div class="border rounded p-4 bg-white">
+                                <h2 class="h5">Oreola Silk</h2>
+                                <p><span class="border border-warning rounded p-1 px-2 text-warning">Contact</span></p>
+                                <p>
+                                    <span class="d-block"><span class="icon-suitcase"></span>Oreola</span>
+                                    <span class="d-block"><span class="icon-room"></span> Lekki Phase 1, Lagos, Nigeria.</span>
+                                    <span class="d-block"><small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small></span>
+                                </p>
+                                <p class="mb-0">Oreola Silk is a world-class beauty center in Lekki offering coloring and treatment services for weaves and wigs, hair-care, pedicure and other numerous beauty care services.</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-section site-block-feature bg-light">
+            <div class="container">
+
+                <div class="text-center mb-5 section-heading">
+                    <h2>Why Choose Us</h2>
+                </div>
+
+                <div class="d-block d-md-flex border-bottom">
+                    <div class="text-center p-4 item border-right" data-aos="fade">
+                        <span class="fas fa-tachometer-alt display-3 mb-3 d-block text-primary"></span>
+                        <h2 class="h4">Convenience and Speed</h2>
+                        <p>No matter where you are, our licensed professional artisans will get in touch with you. We ensure a low turnaround time in excellent service delivery.</p>
+                        <!--            <p><a href="#">Read More <span class="icon-arrow-right small"></span></a></p>-->
+                    </div>
+                    <div class="text-center p-4 item" data-aos="fade">
+                        <span class="fas fa-user-shield display-3 mb-3 d-block text-primary"></span>
+                        <h2 class="h4">Verified Workers</h2>
+                        <p>All our artisans are verified and certified. Hire our tested and trusted professional artisans.</p>
+                        <!--            <p><a href="#">Read More <span class="icon-arrow-right small"></span></a></p>-->
+                    </div>
+                </div>
+                <div class="d-block d-md-flex">
+                    <!--
+          
 -->
-
-    
-
-    <div class="site-section site-block-feature bg-light">
-      <div class="container">
-        
-        <div class="text-center mb-5 section-heading">
-          <h2>Why Choose Us</h2>
+                    <div class="text-center p-4 item" data-aos="fade">
+                        <span class="fas fa-hand-holding-usd display-3 mb-3 d-block text-primary"></span>
+                        <h2 class="h4">No Hidden Fees</h2>
+                        <p>There are no extra or hidden fees. It’s completely free to book any service.</p>
+                        <!--            <p><a href="#">Read More <span class="icon-arrow-right small"></span></a></p>-->
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="d-block d-md-flex border-bottom">
-          <div class="text-center p-4 item border-right" data-aos="fade">
-            <span class="fas fa-tachometer-alt display-3 mb-3 d-block text-primary"></span>
-            <h2 class="h4">Convenience and Speed</h2>
-            <p>No matter where you are, our licensed professional artisans will get in touch with you. We ensure a low turnaround time in excellent service delivery.</p>
-<!--            <p><a href="#">Read More <span class="icon-arrow-right small"></span></a></p>-->
-          </div>
-          <div class="text-center p-4 item" data-aos="fade">
-            <span class="fas fa-user-shield display-3 mb-3 d-block text-primary"></span>
-            <h2 class="h4">Verified Workers</h2>
-            <p>All our artisans are verified and certified. Hire our tested and trusted professional artisans.</p>
-<!--            <p><a href="#">Read More <span class="icon-arrow-right small"></span></a></p>-->
-          </div>
-        </div>
-        <div class="d-block d-md-flex">
-<!--
-          <div class="text-center p-4 item border-right" data-aos="fade">
-            <span class="fas fa-money-check-alt display-3 mb-3 d-block text-primary"></span>
-            <h2 class="h4">Money-Back</h2>
-            <p>Up to 100% money-back if the service is not up to your standard.</p>
-            <p><a href="#">Read More <span class="icon-arrow-right small"></span></a></p>
-          </div>
--->
-          <div class="text-center p-4 item" data-aos="fade">
-            <span class="fas fa-hand-holding-usd display-3 mb-3 d-block text-primary"></span>
-            <h2 class="h4">No Hidden Fees</h2>
-            <p>There are no extra or hidden fees. It’s completely free to book any service.</p>
-<!--            <p><a href="#">Read More <span class="icon-arrow-right small"></span></a></p>-->
-          </div>
-        </div>
-      </div>
+
+
+        <footer class="text-center">
+            <a href="about.html">About Markaas</a> |
+            <a href="about.html#faq">FAQ</a> |
+            <!--<a href="">Privacy Policy</a> |
+<a href="">Support</a> | -->
+            <a href="contact.html">Contact</a>
+            <h5>Connect with us Us On</h5>
+            <div>
+                <a href=""><i class="fab fa-facebook w3-hover-opacity"></i></a>&nbsp;&nbsp;
+                <a href=""><i class="fab fa-instagram w3-hover-opacity"></i></a>&nbsp;&nbsp;
+                <a href=""><i class="fab fa-snapchat w3-hover-opacity"></i></a>&nbsp;&nbsp;
+                <a href=""><i class="fab fa-pinterest-p w3-hover-opacity"></i></a>&nbsp;&nbsp;
+                <a href=""><i class="fab fa-twitter w3-hover-opacity"></i></a>&nbsp;&nbsp;
+                <a href=""><i class="fab fa-linkedin w3-hover-opacity"></i></a>
+            </div>
+            <p> <i class="fas fa-copyright"></i>
+                <script>
+                    document.write(new Date().getFullYear());
+                </script> All Rights Reserved <a href="index.html" target="_blank" class="w3-hover-text-green">Markaas</a>
+            </p>
+        </footer>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery-migrate-3.0.1.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.stellar.min.js"></script>
+        <script src="js/jquery.countdown.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/bootstrap-datepicker.min.js"></script>
+        <script src="js/aos.js"></script>
+
+
+        <script src="js/mediaelement-and-player.min.js"></script>
+
+        <script src="js/main.js"></script>
+
+
+
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&libraries=places&callback=initAutocomplete" async defer></script>
+
     </div>
 
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var mediaElements = document.querySelectorAll('video, audio'),
+                total = mediaElements.length;
 
-
-<!--
-    <div class="site-section block-15">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 mx-auto text-center mb-5 section-heading">
-            <h2>Recent Blog</h2>
-          </div>
-        </div>
-
-
-        <div class="nonloop-block-15 owl-carousel">
-          
-
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#" class="image-play">
-                  <img src="images/img_1.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0 h5"><a href="#">Jobs are made easy</a></h2>
-              <span class="mb-3 d-block post-date">January 20, 2018 &bullet; By <a href="#">Josh Holmes</a></span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
-            </div>
-          
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#" class="image-play">
-                  <img src="images/img_2.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0 h5"><a href="#">Jobs are made easy</a></h2>
-              <span class="mb-3 d-block post-date">January 20, 2018 &bullet; By <a href="#">Josh Holmes</a></span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
-            </div>
-          
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#" class="image-play">
-                  <img src="images/img_3.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0 h5"><a href="#">Jobs are made easy</a></h2>
-              <span class="mb-3 d-block post-date">January 20, 2018 &bullet; By <a href="#">Josh Holmes</a></span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
-            </div>
-
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#" class="image-play">
-                  <img src="images/img_1.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0 h5"><a href="#">Jobs are made easy</a></h2>
-              <span class="mb-3 d-block post-date">January 20, 2018 &bullet; By <a href="#">Josh Holmes</a></span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
-            </div>
-          
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#" class="image-play">
-                  <img src="images/img_2.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0 h5"><a href="#">Jobs are made easy</a></h2>
-              <span class="mb-3 d-block post-date">January 20, 2018 &bullet; By <a href="#">Josh Holmes</a></span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
-            </div>
-          
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#" class="image-play">
-                  <img src="images/img_3.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0 h5"><a href="#">Jobs are made easy</a></h2>
-              <span class="mb-3 d-block post-date">January 20, 2018 &bullet; By <a href="#">Josh Holmes</a></span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
-            </div>
-            
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#" class="image-play">
-                  <img src="images/img_1.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0 h5"><a href="#">Jobs are made easy</a></h2>
-              <span class="mb-3 d-block post-date">January 20, 2018 &bullet; By <a href="#">Josh Holmes</a></span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
-            </div>
-          
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#" class="image-play">
-                  <img src="images/img_2.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0 h5"><a href="#">Jobs are made easy</a></h2>
-              <span class="mb-3 d-block post-date">January 20, 2018 &bullet; By <a href="#">Josh Holmes</a></span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
-            </div>
-          
-            <div class="media-with-text">
-              <div class="img-border-sm mb-4">
-                <a href="#" class="image-play">
-                  <img src="images/img_3.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-              <h2 class="heading mb-0 h5"><a href="#">Jobs are made easy</a></h2>
-              <span class="mb-3 d-block post-date">January 20, 2018 &bullet; By <a href="#">Josh Holmes</a></span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dolores culpa qui aliquam placeat nobis veritatis tempora natus rerum obcaecati.</p>
-            </div>
-        </div>
-
-        <div class="row">
-          
-        </div>
-      </div>
-    </div>
--->
-    
-
-
-    
-        <?php include 'footer.php';?>
-  </div>
-
-  <script>
-      document.addEventListener('DOMContentLoaded', function() {
-                var mediaElements = document.querySelectorAll('video, audio'), total = mediaElements.length;
-
-                for (var i = 0; i < total; i++) {
-                    new MediaElementPlayer(mediaElements[i], {
-                        pluginPath: 'https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/',
-                        shimScriptAccess: 'always',
-                        success: function () {
-                            var target = document.body.querySelectorAll('.player'), targetTotal = target.length;
-                            for (var j = 0; j < targetTotal; j++) {
-                                target[j].style.visibility = 'visible';
-                            }
-                  }
+            for (var i = 0; i < total; i++) {
+                new MediaElementPlayer(mediaElements[i], {
+                    pluginPath: 'https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/',
+                    shimScriptAccess: 'always',
+                    success: function() {
+                        var target = document.body.querySelectorAll('.player'),
+                            targetTotal = target.length;
+                        for (var j = 0; j < targetTotal; j++) {
+                            target[j].style.visibility = 'visible';
+                        }
+                    }
                 });
-                }
-            });
+            }
+        });
     </script>
 
 
     <script>
-      // This example displays an address form, using the autocomplete feature
-      // of the Google Places API to help users fill in the information.
+        // This example displays an address form, using the autocomplete feature
+        // of the Google Places API to help users fill in the information.
 
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+        // This example requires the Places library. Include the libraries=places
+        // parameter when you first load the API. For example:
+        // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-      var placeSearch, autocomplete;
-      var componentForm = {
-        street_number: 'short_name',
-        route: 'long_name',
-        locality: 'long_name',
-        administrative_area_level_1: 'short_name',
-        country: 'long_name',
-        postal_code: 'short_name'
-      };
+        var placeSearch, autocomplete;
+        var componentForm = {
+            street_number: 'short_name',
+            route: 'long_name',
+            locality: 'long_name',
+            administrative_area_level_1: 'short_name',
+            country: 'long_name',
+            postal_code: 'short_name'
+        };
 
-      function initAutocomplete() {
-        // Create the autocomplete object, restricting the search to geographical
-        // location types.
-        autocomplete = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-            {types: ['geocode']});
+        function initAutocomplete() {
+            // Create the autocomplete object, restricting the search to geographical
+            // location types.
+            autocomplete = new google.maps.places.Autocomplete(
+                /** @type {!HTMLInputElement} */
+                (document.getElementById('autocomplete')), {
+                    types: ['geocode']
+                });
 
-        // When the user selects an address from the dropdown, populate the address
-        // fields in the form.
-        autocomplete.addListener('place_changed', fillInAddress);
-      }
-
-      function fillInAddress() {
-        // Get the place details from the autocomplete object.
-        var place = autocomplete.getPlace();
-
-        for (var component in componentForm) {
-          document.getElementById(component).value = '';
-          document.getElementById(component).disabled = false;
+            // When the user selects an address from the dropdown, populate the address
+            // fields in the form.
+            autocomplete.addListener('place_changed', fillInAddress);
         }
 
-        // Get each component of the address from the place details
-        // and fill the corresponding field on the form.
-        for (var i = 0; i < place.address_components.length; i++) {
-          var addressType = place.address_components[i].types[0];
-          if (componentForm[addressType]) {
-            var val = place.address_components[i][componentForm[addressType]];
-            document.getElementById(addressType).value = val;
-          }
-        }
-      }
+        function fillInAddress() {
+            // Get the place details from the autocomplete object.
+            var place = autocomplete.getPlace();
 
-      // Bias the autocomplete object to the user's geographical location,
-      // as supplied by the browser's 'navigator.geolocation' object.
-      function geolocate() {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var geolocation = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-            var circle = new google.maps.Circle({
-              center: geolocation,
-              radius: position.coords.accuracy
-            });
-            autocomplete.setBounds(circle.getBounds());
-          });
+            for (var component in componentForm) {
+                document.getElementById(component).value = '';
+                document.getElementById(component).disabled = false;
+            }
+
+            // Get each component of the address from the place details
+            // and fill the corresponding field on the form.
+            for (var i = 0; i < place.address_components.length; i++) {
+                var addressType = place.address_components[i].types[0];
+                if (componentForm[addressType]) {
+                    var val = place.address_components[i][componentForm[addressType]];
+                    document.getElementById(addressType).value = val;
+                }
+            }
         }
-      }
+
+        // Bias the autocomplete object to the user's geographical location,
+        // as supplied by the browser's 'navigator.geolocation' object.
+        function geolocate() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var geolocation = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+                    var circle = new google.maps.Circle({
+                        center: geolocation,
+                        radius: position.coords.accuracy
+                    });
+                    autocomplete.setBounds(circle.getBounds());
+                });
+            }
+        }
     </script>
-  </body>
-</html>
+</body></html>
